@@ -2,24 +2,28 @@
 <html lang="pt-BR">
 <head>
 
-<link rel="icon" type="image/png" href="gordpng.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gordetector - Resgate de Objetos</title>
 
+<link rel="icon" type="image/png" href="gordpng.png">
+
+<!-- FONTES -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #fff;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
               url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center;
   background-size: cover;
 }
 
-/* CONTAINER GERAL */
+/* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
@@ -31,32 +35,37 @@ body {
   width: 80%;
   max-width: 420px;
   display: block;
-  margin: 20px auto;
-  filter: drop-shadow(0 0 15px gold);
+  margin: 30px auto 10px;
+  filter: drop-shadow(0 0 15px rgba(255,215,0,0.5));
 }
 
 /* TITULOS */
 h1 {
+  font-family: 'Oswald', sans-serif;
   text-align: center;
   color: gold;
-  font-size: 2.5em;
+  font-size: 2.6em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   margin-bottom: 5px;
 }
 
 h2 {
+  font-family: 'Oswald', sans-serif;
   text-align: center;
   color: #ffd700;
+  letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
 /* CARDS */
 .card {
   background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   border-radius: 15px;
-  padding: 20px;
+  padding: 22px;
   margin: 20px 0;
-  box-shadow: 0 0 15px rgba(255,215,0,0.2);
+  box-shadow: 0 0 20px rgba(255,215,0,0.15);
   transition: 0.3s;
 }
 
@@ -65,6 +74,11 @@ h2 {
 }
 
 /* TEXTO */
+p {
+  line-height: 1.6;
+  font-weight: 300;
+}
+
 .highlight {
   font-size: 1.2em;
   margin: 8px 0;
@@ -74,40 +88,41 @@ h2 {
 .social {
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .social img {
-  width: 28px;
+  width: 26px;
   margin-right: 10px;
 }
 
 a {
   color: #00ffcc;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* BOTÃO WHATSAPP */
+/* BOTÃO WHATSAPP (dentro do site) */
 .whatsapp {
   display: block;
   text-align: center;
-  background: #25d366;
+  background: linear-gradient(45deg, #25d366, #1ebe5d);
   color: #fff;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1.2em;
   margin-top: 15px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .whatsapp:hover {
-  background: #1ebe5d;
+  transform: scale(1.05);
 }
 
 /* PIX */
@@ -117,10 +132,43 @@ a:hover {
   margin-top: 10px;
 }
 
+/* BOTÃO FLUTUANTE */
+.whatsapp-float {
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  z-index: 999;
+  animation: pulse 2s infinite;
+  transition: 0.3s;
+}
+
+.whatsapp-float img {
+  width: 38px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* EFEITO PULSO */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
 /* RESPONSIVO */
 @media (max-width: 600px) {
   h1 {
-    font-size: 1.8em;
+    font-size: 1.9em;
   }
 }
 
@@ -149,10 +197,12 @@ a:hover {
 
 <div class="card">
 <h2>Valores</h2>
+
 <p class="highlight">Taxa de deslocamento: R$100 (via PIX antecipado)</p>
 <p class="highlight">Objeto encontrado: + R$400</p>
 <p class="highlight">Tempo de busca: até 2 horas</p>
 <p class="highlight">+10% em finais de semana, feriados ou período noturno</p>
+
 <p><strong>Obs: Valores podem ser negociáveis dependendo da situação.</strong></p>
 </div>
 
@@ -181,7 +231,7 @@ a:hover {
 
 <p>WhatsApp: (13) 98208-2808</p>
 
-<a class="whatsapp" href="https://wa.me/5513982082808" target="_blank">
+<a class="whatsapp" href="https://wa.me/5513982082808?text=Olá,%20perdi%20um%20objeto%20e%20preciso%20de%20ajuda!" target="_blank">
 Falar no WhatsApp agora
 </a>
 
@@ -196,6 +246,12 @@ Falar no WhatsApp agora
 </div>
 
 </div>
+
+<!-- BOTÃO FLUTUANTE -->
+<a href="https://wa.me/5513982082808?text=Olá,%20perdi%20um%20objeto%20e%20preciso%20de%20ajuda!" 
+class="whatsapp-float" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
 
 </body>
 </html>
