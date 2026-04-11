@@ -182,32 +182,42 @@ a {
 
 <img src="gordetector.png" class="logo">
 
-<h1>Resgate de Joias, Alianças e Celulares</h1> 
-  <h2>Cidade de Santos</h2> 
-  <div class="box"> 
-    <p> Perdeu algo importante na praia ou em outro local? Eu posso te ajudar a recuperar. </p>
-    <p> Trabalho com detector de metais profissional, especializado em encontrar objetos perdidos como alianças, joias e eletrônicos. </p>
-    <p> 🔎 Atendimento com seriedade, responsabilidade e transparência. </p> <p> Você pode acompanhar meu trabalho real através das minhas redes sociais! </p> 
-  </div> 
-  <div class="box"> 
-    <h2>Valores</h2>
-    <p class="highlight">Taxa de deslocamento: R$100 (via PIX antecipado)</p> <p class="highlight">Objeto encontrado: + R$400</p>
-    <p class="highlight">Tempo de busca: até 2 horas</p> 
-    <p class="highlight">+10% em finais de semana, feriados ou período noturno</p>
-    <p><strong>Obs: Valores podem ser negociáveis dependendo da situação.</strong></p>
-  </div> <div class="box">
-    <h2>Minhas Redes</h2>
-    <div class="social"> 
-      <img src="https://cdn-icons-png.flaticon.com/128/3670/3670147.png" alt="YouTube">
-      <!-- :contentReference[oaicite:0]{index=0} -->
-      <a href="https://youtube.com/@gordetector" target="_blank">YouTube</a>
-    </div> <div class="social"> <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Instagram"> 
-      <!-- :contentReference[oaicite:1]{index=1} -->
-      <a href="https://instagram.com/gordetector" target="_blank">Instagram</a>
-    </div> 
-    <div class="social"> <img src="https://cdn-icons-png.flaticon.com/128/3670/3670313.png" alt="TikTok"> 
-      <!-- :contentReference[oaicite:2]{index=2} -->
-      <a href="https://tiktok.com/@gordetector" target="_blank">TikTok</a> </div> </div>
+<h1>Resgate de Joias, Alianças e Celulares</h1>
+<h2>Cidade de Santos</h2>
+
+<div class="card">
+<p>Perdeu algo importante na praia ou em outro local? Eu posso te ajudar a recuperar.</p>
+<p>Trabalho com detector de metais profissional.</p>
+<p>🔎 Atendimento com seriedade e transparência.</p>
+</div>
+
+<div class="card">
+<h2>Valores</h2>
+<p class="highlight">Taxa de deslocamento: R$100</p>
+<p class="highlight">Objeto encontrado: + R$400</p>
+</div>
+
+<!-- MINHAS REDES -->
+<div class="card">
+<h2>Minhas Redes</h2>
+
+<div class="social">
+  <img src="https://cdn-icons-png.flaticon.com/128/3670/3670147.png" alt="YouTube">
+  <a href="https://youtube.com/@gordetector" target="_blank">YouTube</a>
+</div>
+
+<div class="social">
+  <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Instagram">
+  <a href="https://instagram.com/gordetector" target="_blank">Instagram</a>
+</div>
+
+<div class="social">
+  <img src="https://cdn-icons-png.flaticon.com/128/3670/3670313.png" alt="TikTok">
+  <a href="https://tiktok.com/@gordetector" target="_blank">TikTok</a>
+</div>
+
+</div>
+
 <div class="card">
 <h2>Contato</h2>
 
@@ -228,7 +238,7 @@ Falar no WhatsApp
   <div class="copy-msg" id="msg">Chave copiada!</div>
 
 </div>
-
+<img src="https://hitwebcounter.com/counter/counter.php?page=21488609&style=0036&nbdigits=5&type=ip&initCount=0" />
 </div>
 
 </div>
@@ -247,11 +257,9 @@ Falar no WhatsApp
 function copiarPix() {
   const chave = "pix@gordetector.com.br";
 
-  // MÉTODO MODERNO
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(chave);
   } else {
-    // FALLBACK
     const input = document.createElement("input");
     input.value = chave;
     document.body.appendChild(input);
@@ -260,23 +268,16 @@ function copiarPix() {
     document.body.removeChild(input);
   }
 
-  // MUDAR BOTÃO
   const btn = document.getElementById("pixBtn");
   btn.innerText = "COPIADO ✓";
 
-  // MOSTRAR MENSAGEM
   const msg = document.getElementById("msg");
   msg.style.display = "block";
 
-  // TOCAR SOM
-//  document.getElementById("ding").play();
   const audio = document.getElementById("ding");
-audio.currentTime = 0;
+  audio.currentTime = 0;
+  audio.play().catch(() => {});
 
-audio.play().catch(() => {
-  console.log("Som bloqueado pelo navegador");
-});
-  // RESETAR
   setTimeout(() => {
     btn.innerText = "Copiar chave PIX";
     msg.style.display = "none";
