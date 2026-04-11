@@ -228,7 +228,9 @@ Falar no WhatsApp
 </a>
 
 <!-- SOM -->
-<audio id="ding" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+<audio id="ding" preload="auto">
+  <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 function copiarPix() {
@@ -256,8 +258,13 @@ function copiarPix() {
   msg.style.display = "block";
 
   // TOCAR SOM
-  document.getElementById("ding").play();
+//  document.getElementById("ding").play();
+  const audio = document.getElementById("ding");
+audio.currentTime = 0;
 
+audio.play().catch(() => {
+  console.log("Som bloqueado pelo navegador");
+});
   // RESETAR
   setTimeout(() => {
     btn.innerText = "Copiar chave PIX";
