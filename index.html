@@ -106,7 +106,7 @@ a {
   font-weight: bold;
 }
 
-/* PIX BOX PREMIUM */
+/* PIX */
 .pix-container {
   display: flex;
   flex-direction: column;
@@ -127,7 +127,7 @@ a {
   filter: drop-shadow(0 0 3px #00ff88);
 }
 
-/* BOTÃO COPIAR PIX */
+/* BOTÃO */
 .pix-btn {
   background: linear-gradient(45deg, #00ff88, #00cc66);
   color: #000;
@@ -143,14 +143,13 @@ a {
   transform: scale(1.05);
 }
 
-/* FEEDBACK */
 .copy-msg {
   font-size: 0.9em;
   color: #00ff88;
   display: none;
 }
 
-/* WHATSAPP FLUTUANTE */
+/* WHATSAPP */
 .whatsapp-float {
   position: fixed;
   width: 65px;
@@ -213,7 +212,7 @@ Falar no WhatsApp
     <span class="pix">pix@gordetector.com.br</span>
   </div>
 
-  <button class="pix-btn" onclick="copiarPix()">Copiar chave PIX</button>
+  <button id="pixBtn" class="pix-btn" onclick="copiarPix()">Copiar chave PIX</button>
 
   <div class="copy-msg" id="msg">Chave copiada!</div>
 
@@ -228,12 +227,40 @@ Falar no WhatsApp
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
+<!-- SOM -->
+<audio id="ding" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+
 <script>
 function copiarPix() {
-  navigator.clipboard.writeText("pix@gordetector.com.br");
+  const chave = "pix@gordetector.com.br";
+
+  // MÉTODO MODERNO
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(chave);
+  } else {
+    // FALLBACK
+    const input = document.createElement("input");
+    input.value = chave;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+  }
+
+  // MUDAR BOTÃO
+  const btn = document.getElementById("pixBtn");
+  btn.innerText = "COPIADO ✓";
+
+  // MOSTRAR MENSAGEM
   const msg = document.getElementById("msg");
   msg.style.display = "block";
+
+  // TOCAR SOM
+  document.getElementById("ding").play();
+
+  // RESETAR
   setTimeout(() => {
+    btn.innerText = "Copiar chave PIX";
     msg.style.display = "none";
   }, 2000);
 }
