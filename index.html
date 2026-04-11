@@ -148,8 +148,11 @@ a {
 
 /* WHATSAPP */
 .whatsapp {
-  display: block;
-  text-align: center;
+  display: flex; /* 🔥 igual às redes */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
   background: linear-gradient(45deg, #25d366, #1ebe5d);
   color: #fff;
   padding: 15px;
@@ -157,6 +160,13 @@ a {
   font-size: 1.2em;
   margin-top: 15px;
   font-weight: bold;
+
+  transition: 0.3s;
+}
+
+  .whatsapp img {
+  width: 26px;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,50));
 }
 
 .pix {
@@ -302,6 +312,7 @@ a {
 <h2>Contato</h2>
 
 <a class="whatsapp" href="https://wa.me/5513982082808?text=Olá,%20perdi%20um%20objeto%20e%20preciso%20de%20ajuda!" target="_blank">
+   <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png">
 Falar no WhatsApp
 </a>
 
