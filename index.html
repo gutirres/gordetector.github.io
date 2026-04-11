@@ -1,175 +1,201 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="gordpng.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="gordpng.png">
-  <link rel="apple-touch-icon" href="gordpng.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Gordetector - Resgate de Objetos</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      text-align: center;
-      background: url('https://viagemeturismo.abril.com.br/wp-content/uploads/2016/12/52600-tadeu-nascimento.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
+<link rel="icon" type="image/png" href="gordpng.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .overlay {
-      background: rgba(0,0,0,0.65);
-      min-height: 100vh;
-      padding: 20px;
-    }
+<title>Gordetector - Resgate de Objetos</title>
 
-    h1 {
-      font-size: 2.5em;
-      color: gold;
-    }
+<style>
 
-    h2 {
-      margin-top: 30px;
-      color: #ffd700;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center;
+  background-size: cover;
+}
 
-    .box {
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 700px;
-    }
+/* CONTAINER GERAL */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
 
-    .highlight {
-      font-size: 1.3em;
-      margin: 10px 0;
-    }
+/* LOGO */
+.logo {
+  width: 80%;
+  max-width: 420px;
+  display: block;
+  margin: 20px auto;
+  filter: drop-shadow(0 0 15px gold);
+}
 
-    .social {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 10px 0;
-    }
-
-    .social img {
-      width: 30px;
-      margin-right: 10px;
-    }
-
-    a {
-      color: #00ffcc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .pix {
-      margin-top: 20px;
-      font-size: 1.2em;
-      color: #00ff88;
-      font-weight: bold;
-    }
-    .logo-container {
+/* TITULOS */
+h1 {
   text-align: center;
+  color: gold;
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+h2 {
+  text-align: center;
+  color: #ffd700;
   margin-bottom: 20px;
 }
 
-.logo {
-  width: 90%;
-  max-width: 500px;
-  height: auto;
-}
-   .logo-box {
-  background: rgba(0,0,0,0.7);
-  padding: 15px;
+/* CARDS */
+.card {
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
   border-radius: 15px;
-  margin: 20px auto;
-  max-width: 520px;
-  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 15px rgba(255,215,0,0.2);
+  transition: 0.3s;
 }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-  </style>
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* TEXTO */
+.highlight {
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+
+/* REDES */
+.social {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.social img {
+  width: 28px;
+  margin-right: 10px;
+}
+
+a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* BOTÃO WHATSAPP */
+.whatsapp {
+  display: block;
+  text-align: center;
+  background: #25d366;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  margin-top: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* PIX */
+.pix {
+  color: #00ff88;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8em;
+  }
+}
+
+</style>
+
 </head>
 
 <body>
-  <div class="overlay">
 
-    <div class="box logo-box">
-      <div class="logo-container">
-        <img src="gordetector.png" alt="Gordetector" class="logo">
-      </div>
-      
-    <h1>Resgate de Joias, Alianças e Celulares</h1>
-    <h2>Cidade de Santos</h2>
+<div class="container">
 
-    <div class="box">
-      <p>
-        Perdeu algo importante na praia ou em outro local? Eu posso te ajudar a recuperar.
-      </p>
+<img src="gordetector.png" class="logo">
 
-      <p>
-        Trabalho com detector de metais profissional, especializado em encontrar objetos perdidos como alianças, joias e eletrônicos.
-      </p>
+<h1>Resgate de Joias, Alianças e Celulares</h1>
+<h2>Cidade de Santos</h2>
 
-      <p>
-        🔎 Atendimento com seriedade, responsabilidade e transparência.
-      </p>
+<div class="card">
+<p>Perdeu algo importante na praia ou em outro local? Eu posso te ajudar a recuperar.</p>
 
-      <p>
-        Você pode acompanhar meu trabalho real através das minhas redes sociais!
-      </p>
-    </div>
+<p>Trabalho com detector de metais profissional, especializado em encontrar objetos perdidos como alianças, joias e eletrônicos.</p>
 
-    <div class="box">
-      <h2>Valores</h2>
-      <p class="highlight">Taxa de deslocamento: R$100 (via PIX antecipado)</p>
-      <p class="highlight">Objeto encontrado: + R$400</p>
-      <p class="highlight">Tempo de busca: até 2 horas</p>
-      <p class="highlight">+10% em finais de semana, feriados ou período noturno</p>
-      <p><strong>Obs: Valores podem ser negociáveis dependendo da situação.</strong></p>
-    </div>
+<p>🔎 Atendimento com seriedade, responsabilidade e transparência.</p>
 
-    <div class="box">
-      <h2>Minhas Redes</h2>
+<p>Você pode acompanhar meu trabalho real através das minhas redes sociais!</p>
+</div>
 
-      <div class="social">
-        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670147.png" alt="YouTube"> <!-- :contentReference[oaicite:0]{index=0} -->
-        <a href="https://youtube.com/@gordetector" target="_blank">YouTube - Gordetector</a>
-      </div>
+<div class="card">
+<h2>Valores</h2>
+<p class="highlight">Taxa de deslocamento: R$100 (via PIX antecipado)</p>
+<p class="highlight">Objeto encontrado: + R$400</p>
+<p class="highlight">Tempo de busca: até 2 horas</p>
+<p class="highlight">+10% em finais de semana, feriados ou período noturno</p>
+<p><strong>Obs: Valores podem ser negociáveis dependendo da situação.</strong></p>
+</div>
 
-      <div class="social">
-        <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Instagram"> <!-- :contentReference[oaicite:1]{index=1} -->
-        <a href="https://instagram.com/gordetector" target="_blank">Instagram - Gordetector</a>
-      </div>
+<div class="card">
+<h2>Minhas Redes</h2>
 
-      <div class="social">
-        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670313.png" alt="TikTok"> <!-- :contentReference[oaicite:2]{index=2} -->
-        <a href="https://tiktok.com/@gordetector" target="_blank">TikTok - @gordetector</a>
-      </div>
+<div class="social">
+<img src="https://cdn-icons-png.flaticon.com/128/3670/3670147.png">
+<a href="https://youtube.com/@gordetector" target="_blank">YouTube - Gordetector</a>
+</div>
 
-    </div>
+<div class="social">
+<img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png">
+<a href="https://instagram.com/gordetector" target="_blank">Instagram - Gordetector</a>
+</div>
 
-    <div class="box">
-      <h2>Contato</h2>
-      <p>WhatsApp: (13) 98208-2808</p>
-      <p class="pix">CHAVE PIX: pix@gordetector.com.br</p>
-      <p><strong>Entre em contato para maiores informações!</strong></p>
-        <img src="https://hitwebcounter.com/counter/counter.php?page=21488609&style=0036&nbdigits=5&type=ip&initCount=0" title="MS Word" Alt="MS Word"   border="0" /></>      
-    </div>
+<div class="social">
+<img src="https://cdn-icons-png.flaticon.com/128/3670/3670313.png">
+<a href="https://tiktok.com/@gordetector" target="_blank">TikTok - @gordetector</a>
+</div>
 
-  </div>
+</div>
+
+<div class="card">
+<h2>Contato</h2>
+
+<p>WhatsApp: (13) 98208-2808</p>
+
+<a class="whatsapp" href="https://wa.me/5513982082808" target="_blank">
+Falar no WhatsApp agora
+</a>
+
+<p class="pix">CHAVE PIX: pix@gordetector.com.br</p>
+
+<p><strong>Entre em contato para maiores informações!</strong></p>
+
+<br>
+
+<img src="https://hitwebcounter.com/counter/counter.php?page=21488609&style=0036&nbdigits=5&type=ip&initCount=0">
+
+</div>
+
+</div>
+
 </body>
 </html>
